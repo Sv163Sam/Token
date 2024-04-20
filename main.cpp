@@ -137,18 +137,8 @@ std::vector<Token> Tokenize(const std::string& input) {
     return tokens;
 }
 
-int EvaluateExpression(const std::vector<Token>& tokens) {
-    // Реализация вычисления сложных математических выражений
-    return 42; // Пример результата
-}
-
 int main() {
     std::string input = "(1 + 2) * 3 / 4 + 5 * (6 - 7) + 1";
     std::vector<Token> tokens = Tokenize(input);
-
-    int result = EvaluateExpression(tokens);
-
-    std::cout << "Result: " << result << std::endl;
-
     return 0;
 }
