@@ -64,15 +64,15 @@ struct SquareToken {
 using Token = std::variant<OpeningBracket, ClosingBracket, Number, UnknownToken, MinToken, AbsToken, Plus, Minus, Multiply, Modulo, Divide, MaxToken, SquareToken>;
 
 const std::unordered_map<std::string, Token> TokenType = {
-        {"min", MinToken{0}},
-        {"abs", AbsToken{0}},
-        {"max", MaxToken{0}},
-        {"square", SquareToken{0}},
-        {"+", Plus{0, 0}},
-        {"-", Minus{0, 0}},
-        {"*", Multiply{0, 0}},
-        {"/", Divide{0, 0}},
-        {"%", Modulo{0, 0}},
+        {"min", MinToken{}},
+        {"abs", AbsToken{}},
+        {"max", MaxToken{}},
+        {"square", SquareToken{}},
+        {"+", Plus{}},
+        {"-", Minus{}},
+        {"*", Multiply{}},
+        {"/", Divide{}},
+        {"%", Modulo{}},
         {"(", OpeningBracket{}},
         {")", ClosingBracket{}}
 };
@@ -106,7 +106,6 @@ Token ParseName(const std::string& input, size_t& pos) {
             ++pos;
             break;
         }
-
         symbol = static_cast<unsigned char>(input[++pos]);
     }
 
